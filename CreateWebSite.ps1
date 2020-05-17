@@ -1,0 +1,1 @@
+New-WebApplication -Site "Default Web Site" -Name HelloWorldSample -PhysicalPath c:\inetpub\wwwroot\HelloWorldSample -Force
