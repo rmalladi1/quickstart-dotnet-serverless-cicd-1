@@ -3,8 +3,7 @@ $target = "C:\inetpub\wwwroot\HelloWorldSample\"
 function DeleteIfExistsAndCreateEmptyFolder($dir )
 {
     if ( Test-Path $dir ) {    
-           Get-ChildItem -Path  $dir -Force -Recurse | Remove-Item -force –
-							  recurse
+           Get-ChildItem -Path  $dir -Force -Recurse | Remove-Item -force –recurse
            Remove-Item $dir -Force
     }
     New-Item -ItemType Directory -Force -Path $dir
@@ -31,6 +30,6 @@ function GetWebArtifactFolderPath($path)
     }
 }
 
-$path = GetWebArtifactFolderPath("C:\temp\WebApp\HelloWorldSample")
+$path = GetWebArtifactFolderPath(".\")
 $path2 = $path + "\*"
 Copy-Item $path2 $target -recurse -force
